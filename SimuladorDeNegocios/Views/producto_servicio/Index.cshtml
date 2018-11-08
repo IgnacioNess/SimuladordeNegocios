@@ -1,0 +1,77 @@
+﻿@model IEnumerable<SimuladorDeNegocios.Models.producto_servicio>
+
+@{
+    ViewData["Title"] = "Simulador de Negocios";
+}
+
+<h2>Simulador de Negocios</h2>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombe)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.producto_nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.unidad_produccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.produccion_mensual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.costo_unitario)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.margen_utilidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precio_publico)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.datos_empre_id_empresa)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.unidad_produccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.produccion_mensual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.costo_unitario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.margen_utilidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio_publico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.datos_empre_id_empresa)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_producto">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_producto">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_producto">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

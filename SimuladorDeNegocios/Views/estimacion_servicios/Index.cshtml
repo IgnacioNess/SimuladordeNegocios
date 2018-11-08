@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SimuladorDeNegocios.Models.estimacion_servicios>
+
+@{
+    ViewData["Title"] = "Simulador de Negocios";
+}
+
+<h2>Simulador de Negocios</h2>
+
+<p>
+    <a asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.unidad_produccion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.total_suscripciones)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.total_mensual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.producto_servicios_id_producto)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.unidad_produccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_suscripciones)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.total_mensual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.producto_servicios_id_producto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id_suscripcion">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.id_suscripcion">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.id_suscripcion">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

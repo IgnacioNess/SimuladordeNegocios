@@ -1,0 +1,45 @@
+﻿@model SimuladorDeNegocios.Models.estimacion_servicios
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Seguro que quieres eliminar?</h3>
+<div>
+    <h4>Estimacion_servicios</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.unidad_produccion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.unidad_produccion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.total_suscripciones)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.total_suscripciones)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.total_mensual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.total_mensual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.producto_servicios_id_producto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.producto_servicios_id_producto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="id_suscripcion" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-action="Index">Regresar a la lista</a>
+    </form>
+</div>

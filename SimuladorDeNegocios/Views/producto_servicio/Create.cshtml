@@ -1,0 +1,68 @@
+﻿@model SimuladorDeNegocios.Models.producto_servicio
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h2>Crear</h2>
+
+<h4>Producto_servicio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nombe" class="control-label"></label>
+                <input asp-for="nombe" class="form-control" />
+                <span asp-validation-for="nombe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="producto_nombre" class="control-label"></label>
+                <input asp-for="producto_nombre" class="form-control" />
+                <span asp-validation-for="producto_nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="unidad_produccion" class="control-label"></label>
+                <input asp-for="unidad_produccion" class="form-control" />
+                <span asp-validation-for="unidad_produccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="produccion_mensual" class="control-label"></label>
+                <input asp-for="produccion_mensual" class="form-control" />
+                <span asp-validation-for="produccion_mensual" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="costo_unitario" class="control-label"></label>
+                <input asp-for="costo_unitario" class="form-control" />
+                <span asp-validation-for="costo_unitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="margen_utilidad" class="control-label"></label>
+                <input asp-for="margen_utilidad" class="form-control" />
+                <span asp-validation-for="margen_utilidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="precio_publico" class="control-label"></label>
+                <input asp-for="precio_publico" class="form-control" />
+                <span asp-validation-for="precio_publico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="datos_empre_id_empresa" class="control-label"></label>
+                <input asp-for="datos_empre_id_empresa" class="form-control" />
+                <span asp-validation-for="datos_empre_id_empresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
